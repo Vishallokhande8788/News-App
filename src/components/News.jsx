@@ -12,7 +12,7 @@ export class News extends Component {
 
   async componentDidMount() {
     try {
-      let url = "https://newsdata.io/api/1/news?apikey=pub_64335a891e0057ab7411dc8e12771e62f621e&q=News";
+      let url = "https://newsdata.io/api/1/news?apikey=pub_64335a891e0057ab7411dc8e12771e62f621e&country=in&language=en";
       let data = await fetch(url);
       let parsedData = await data.json();
       console.log(parsedData);
