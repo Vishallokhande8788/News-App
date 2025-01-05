@@ -1,0 +1,122 @@
+/* General Styles */
+.container {
+    padding-top: 20px;
+  }
+  
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  /* Card Styles */
+  .card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transform-style: preserve-3d;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+  }
+  
+  .card:hover {
+    transform: translateY(-10px) rotateY(10deg);
+    box-shadow: 0 14px 26px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Card Image */
+  .card-img-top {
+    max-height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .card:hover .card-img-top {
+    transform: scale(2);
+  }
+  
+  /* Card Body */
+  .card-body {
+    background-color: #ffffff;
+    padding: 20px;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease;
+  }
+  
+  .card-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #212529;
+    margin-bottom: 10px;
+  }
+  
+  .card-text {
+    font-size: 1rem;
+    color: #6c757d;
+    margin-bottom: 15px;
+  }
+  
+  /* Read More Button */
+  .btn-primary {
+    background-color: #007bff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+  }
+  
+  .btn-primary:hover {
+    background-color: #0056b3;
+    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.4);
+  }
+  
+  /* Loading and No Articles */
+  .text-center {
+    font-size: 1.2rem;
+    color: #6c757d;
+  }
+  
+  .pagination-buttons {
+    margin-top: 30px;
+    text-align: center;
+  }
+  
+  .pagination-buttons .btn {
+    min-width: 120px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+  }
+  
+  .pagination-buttons .btn:hover {
+    background-color: #007bff;
+    color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3);
+  }
+  
+  .pagination-buttons .btn:disabled {
+    background-color: #e0e0e0;
+    color: #6c757d;
+    cursor: not-allowed;
+  }
+  
+  @media (max-width: 767px) {
+    .card-body {
+      padding: 15px;
+    }
+  
+    .btn-primary {
+      width: 100%;
+      font-size: 1.1rem;
+    }
+  
+    .pagination-buttons .btn {
+      min-width: 120px;
+    }
+  }
+
+  export default News;
