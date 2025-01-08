@@ -119,4 +119,7 @@ General Styles
     }
   }
 
+  /* Add custom styles for category buttons to ensure they have the same size */
+
+
   export default News;

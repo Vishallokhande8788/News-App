@@ -14,6 +14,9 @@ importers:
       react-dom:
         specifier: ^18.3.1
         version: 18.3.1(react@18.3.1)
+      react-loading-skeleton:
+        specifier: ^3.5.0
+        version: 3.5.0(react@18.3.1)
       react-router-dom:
         specifier: ^7.1.1
         version: 7.1.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -1051,6 +1054,11 @@ packages:
 
   react-is@16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
+
+  react-loading-skeleton@3.5.0:
+    resolution: {integrity: sha512-gxxSyLbrEAdXTKgfbpBEFZCO/P153DnqSCQau2+o6lNy1jgMRr2MmRmOzMmyrwSaSYLRB8g7b0waYPmUjz7IhQ==}
+    peerDependencies:
+      react: '>=16.8.0'
 
   react-router-dom@7.1.1:
     resolution: {integrity: sha512-vSrQHWlJ5DCfyrhgo0k6zViOe9ToK8uT5XGSmnuC2R3/g261IdIMpZVqfjD6vWSXdnf5Czs4VA/V60oVR6/jnA==}
@@ -2325,6 +2333,10 @@ snapshots:
       scheduler: 0.23.2
 
   react-is@16.13.1: {}
+
+  react-loading-skeleton@3.5.0(react@18.3.1):
+    dependencies:
+      react: 18.3.1
 
   react-router-dom@7.1.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
