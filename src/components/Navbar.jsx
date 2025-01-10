@@ -45,7 +45,9 @@ export class Navbar extends Component {
                     Contact Us
                   </a>
                 </li>
-               
+                <li className="nav-item ms-auto ms-60">
+                  <img src="news.png" alt="news" className="img-fluid" style={{ maxHeight: '40px' }} />
+                </li>
 
               </ul>
             </div>

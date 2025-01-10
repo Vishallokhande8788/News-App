@@ -14,7 +14,8 @@ class News extends Component {
       loading: false,
       nextPage: null,
       prevPage: null,
-      category: "politics", // Default category
+      category: "All",
+      // Default category
     };
   }
 
@@ -79,23 +80,21 @@ class News extends Component {
   };
 
   render() {
-    const { articles, loading, nextPage, prevPage, category ,  } = this.state;
+    const { articles, loading, nextPage, prevPage, category } = this.state;
 
     return (
       <div className="container my-3">
         <h2
           className="text-center my-4 mb-5"
           style={{
-            fontSize: "4rem",
             color: "#343a40",
-            textTransform: "uppercase",
             fontWeight: "700",
-            letterSpacing: "2px",
             textShadow:
               "5px 5px 15px rgba(0, 0, 0, 0.3), -5px -5px 15px rgba(0, 0, 0, 0.2)",
+            fontSize: "calc(1.5rem + 1vw)", // Adjusts size based on screen width
           }}
         >
-          Newsify - Top Headlines
+          Newsify &mdash; Top {this.state.category} Headlines <br />
         </h2>
 
         {/* Category Buttons */}
