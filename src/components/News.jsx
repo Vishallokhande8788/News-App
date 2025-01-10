@@ -1,6 +1,10 @@
+// News.js
 import React, { Component } from "react";
 import "../News.css";
 import SkeletonLoader from "./Skeleton"; // Import SkeletonLoader component
+import CategoryButtons from "./CategoryButtons";
+import NewsCard from "./NewsCard";
+import Pagination from "./Pagination";
 
 class News extends Component {
   constructor() {
@@ -75,7 +79,7 @@ class News extends Component {
   };
 
   render() {
-    const { articles, loading, nextPage, prevPage, category } = this.state;
+    const { articles, loading, nextPage, prevPage, category ,  } = this.state;
 
     return (
       <div className="container my-3">
@@ -95,19 +99,10 @@ class News extends Component {
         </h2>
 
         {/* Category Buttons */}
-        <div className="d-flex justify-content-end mb-3">
-          {["politics", "entertainment", "sports", "health"].map((cat) => (
-            <button
-              key={cat}
-              className={`btn btn-outline-secondary mx-1 ${
-                category === cat ? "active" : ""
-              }`}
-              onClick={() => this.handleCategoryClick(cat)}
-            >
-              {cat.charAt(0).toUpperCase() + cat.slice(1)}
-            </button>
-          ))}
-        </div>
+        <CategoryButtons
+          category={category}
+          onCategoryClick={this.handleCategoryClick}
+        />
 
         {/* Show Skeleton loader while loading */}
         {loading ? (
@@ -115,72 +110,26 @@ class News extends Component {
         ) : (
           // Display news articles when loaded
           <div className="row">
-            {articles.length > 0
-              ? articles.map((article) => (
-                  <div
-                    className="col-md-4 mb-4"
-                    key={article.link || article.title}
-                  >
-                    <div
-                      className="card"
-                      style={{
-                        width: "320px",
-                        height: "420px",
-                        overflow: "hidden",
-                        position: "relative",
-                      }}
-                    >
-                      <img
-                        src={article.image_url || "https://via.placeholder.com/150"}
-                        className="card-img-top"
-                        alt="news"
-                        style={{
-                          width: "100%",
-                          height: "250px",
-                          objectFit: "cover",
-                        }}
-                      />
-                      <div className="card-body" style={{ padding: "10px" }}>
-                        <h5
-                          className="card-title"
-                          style={{ fontSize: "1rem", fontWeight: "bold" }}
-                        >
-                          {article.title}
-                        </h5>
-                        <p className="card-text" style={{ fontSize: "0.85rem" }}>
-                          {article.description}
-                        </p>
-                        <button
-                          className="btn btn-primary position-absolute"
-                          style={{ bottom: "5px", left: "5px" }}
-                          onClick={() => window.open(article.link, "_blank")}
-                        >
-                          Read More
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                ))
-              : <p className="text-center">No articles available.</p>}
+            {articles.length > 0 ? (
+              articles.map((article) => (
+                <NewsCard
+                  article={article}
+                  key={article.link || article.title}
+                />
+              ))
+            ) : (
+              <p className="text-center">No articles available.</p>
+            )}
           </div>
         )}
 
-        <div className="pagination-buttons d-flex justify-content-between mt-4">
-          <button
-            className="btn btn-secondary"
-            onClick={this.handlePrevClick}
-            disabled={!prevPage}
-          >
-            &laquo; Previous
-          </button>
-          <button
-            className="btn btn-secondary"
-            onClick={this.handleNextClick}
-            disabled={!nextPage}
-          >
-            Next &raquo;
-          </button>
-        </div>
+        {/* Pagination */}
+        <Pagination
+          prevPage={prevPage}
+          nextPage={nextPage}
+          onPrevClick={this.handlePrevClick}
+          onNextClick={this.handleNextClick}
+        />
       </div>
     );
   }
