@@ -14,7 +14,7 @@ class News extends Component {
       loading: false,
       nextPage: null,
       prevPage: null,
-      category: "All",
+      category: "Technology",
       // Default category
     };
   }
