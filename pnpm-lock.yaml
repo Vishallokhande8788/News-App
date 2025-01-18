@@ -20,6 +20,9 @@ importers:
       react-router-dom:
         specifier: ^7.1.1
         version: 7.1.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      react-top-loading-bar:
+        specifier: ^3.0.2
+        version: 3.0.2(react@18.3.1)
     devDependencies:
       '@eslint/js':
         specifier: ^9.17.0
@@ -1076,6 +1079,12 @@ packages:
     peerDependenciesMeta:
       react-dom:
         optional: true
+
+  react-top-loading-bar@3.0.2:
+    resolution: {integrity: sha512-hW0CHrHqKdBOBsVhms73ka0rgb9/aoiRfqo7jiS1vwIYDK7VkyMj52ypo5ewhshTQGHKE6mRvR99GZBZ+FuM/Q==}
+    engines: {node: '>=14'}
+    peerDependencies:
+      react: ^16 || ^17 || ^18 || ^19
 
   react@18.3.1:
     resolution: {integrity: sha512-wS+hAgJShR0KhEvPJArfuPVN1+Hz1t0Y6n5jLrGQbkb4urgPE/0Rve+1kMB1v/oWgHgm4WIcV+i7F2pTVj+2iQ==}
@@ -2353,6 +2362,10 @@ snapshots:
       turbo-stream: 2.4.0
     optionalDependencies:
       react-dom: 18.3.1(react@18.3.1)
+
+  react-top-loading-bar@3.0.2(react@18.3.1):
+    dependencies:
+      react: 18.3.1
 
   react@18.3.1:
     dependencies:
