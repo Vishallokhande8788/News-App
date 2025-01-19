@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 
 const SkeletonLoader = ({ setProgress }) => {
-  React.useEffect(() => {
+  useEffect(() => {
     setProgress(30); // Start loading
     const timer = setTimeout(() => setProgress(100), 1000); // Simulate loading
     return () => clearTimeout(timer); // Cleanup timeout

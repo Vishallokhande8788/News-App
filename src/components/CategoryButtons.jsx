@@ -30,7 +30,7 @@ const CategoryButtons = ({ category, onCategoryClick, setProgress }) => {
     <div>
       <h4 className="text-center mb-3">Explore by Categories</h4>
       <div className="row justify-content-center mb-3">
-        {categories.map((cat, index) => (
+        {categories.map((cat) => (
           <div
             key={cat}
             className="col-6 col-sm-2 mb-2 d-flex justify-content-center"

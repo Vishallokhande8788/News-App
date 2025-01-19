@@ -1,4 +1,3 @@
-// NewsCard.js
 import React from "react";
 
 const NewsCard = ({ article }) => {
