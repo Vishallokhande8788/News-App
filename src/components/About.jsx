@@ -88,7 +88,7 @@ const About = () => {
           >
             The Developer Behind Newsify
           </h2>
-          <p className="text-info mb-4" style={{ fontSize: "1.5rem" }}>
+          <p className="text-info mb-4" style={{ fontSize: "1.4rem" }}>
             I’m a software developer passionate about creating seamless and
             user-friendly experiences with modern technology.
           </p>
